@@ -273,7 +273,7 @@ if (isCmd && !fromMe) {console.log("[" + chalk.green(" CMD ") + "]" + chalk.yell
 let teks_menu =`*${ucapanWaktu} ${pushname}*
 
 ━━━「 *DATA SERVER* 」━━━
-⫹ Library : *Baileys-MD*.
+⫹ Library : *Ricmalo-BOT*.
 ⫹ Waktu : ${tanggal}
 ⫹ Jam : ${jam}
 ⫹ Creator : ${ownerName}
@@ -337,9 +337,9 @@ break
 case 'source_code':
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
 let text_source =`━━━[ *SOURCE-CODE* ]━━━
-• _Pengembang : Pebri Pratama_
-• _Whatsapp : 0838-3455-8105_
-• _Youtube : Lexxy Official_
+• _Pengembang : Riko Maelano_
+• _Whatsapp : 0896-1487-9811_
+• _Youtube : Ricmalo_
 • _Script Bot : Cek Di YouTube_
 ━━━━━━━━━━━━━━━━━━━`
 reply(text_source)
@@ -404,11 +404,11 @@ const sections = [
 ]}]
 const listMessage = {
 text: `━━━━━━━━━━━━━━
-*_• Library : Baileys-MD_*.
+*_• Library : Ricmalo-BOT_*.
 *_• Waktu : ${tanggal}_*
 *_• Jam : ${jam}_*
 *_• Creator : ${ownerName}_*
-*_• Author : Lexxy Official_*
+*_• Author : Ricmalo_*
 ━━━━━━━━━━━━━━━`,
 footer: setting.footer,
 title: `${ucapanWaktu} ${pushname}\nSilahkan Pilih List Menu Bot.`,
