@@ -1043,8 +1043,11 @@ case 'session':
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
 if (!isOwner) return reply(mess.OnlyOwner)
 let ini_nama_sessionya = 'session'
+let ini_nama_usernya = 'pengguna'
 var anumu = await fs.readFileSync(`./${ini_nama_sessionya}.json`)
+var anumu = await fs.readFileSync(`./${ini_nama_usernya}.json`)
 conn.sendMessage(from, { document: anumu, mimetype: 'document/application', fileName: 'session.json'}, {quoted: msg } )
+conn.sendMessage(from, { document: anumu, mimetype: 'document/application', fileName: 'pengguna.json'}, {quoted: msg } )
 reply(`*Note :*\n_Session Bot Bersifat Untuk Pribadi Dari Owner Maupun Bot, Tidak Untuk User Bot Ataupun Pengguna Bot._`)
 reply(`_Sedang Mengirim Document_\n_Nama Session : ${setting.sessionName}.json_\n_Mohon Tunggu Sebentar..._`)
 break
