@@ -429,6 +429,7 @@ reply(`━━━[ _*OTHERS MENU*_ ]━━━
 • ${prefix}owner
 • ${prefix}menfes
 • ${prefix}runtime
+• ${prefix}family100
 ━━━━━━━━━━━━━━━`)
 break
 case 'menu_2':
@@ -673,6 +674,30 @@ let ini_kode_jsnya = q
 let result_obfus = java_script.obfuscate(`${ini_kode_jsnya}`,
 {compact: false, controlFlowFlattening: true, controlFlowFlatteningThreshold: 1, numbersToExpressions: true, simplify: true, stringArrayShuffle: true, splitStrings: true, stringArrayThreshold: 1 });
 reply(result_obfus.getObfuscatedCode())
+break
+case 'family100': {
+  var winScore = 4999
+  if ('family100'+m.chat in _family100) {
+   m.reply('Masih Ada Sesi Kuis Yang Belum Di Selesaikan')
+   throw false
+  }
+  var anuy = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
+  var result = anuy[Math.floor(Math.random() * anuy.length)]
+  var caption = `
+📑 Soal : ${result.soal}
+🤝 Terdapat *${result.jawaban.length}* jawaban${result.jawaban.find(v => v.includes(' ')) ? `
+(beberapa jawaban terdapat spasi)
+`: ''}
+🎁 +${winScore} XP tiap jawaban benar
+  `.trim()
+  _family100['family100'+m.chat] = {
+  id: 'family100'+m.chat,
+  pesan: await ichi.sendText(m.chat, caption, m),
+  ...random,
+  terjawab: Array.from(result.jawaban, () => false),
+  hadiah: winScore,
+  }
+  }
 break
 case 'tambah':
 case 'tambah_kan':
