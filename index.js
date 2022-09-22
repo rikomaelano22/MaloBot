@@ -692,7 +692,7 @@ case 'family100': {
   `.trim()
   _family100['family100'+m.chat] = {
   id: 'family100'+m.chat,
-  pesan: await ichi.sendText(m.chat, caption, m),
+  pesan: await async.sendText(m.chat, caption, m),
   ...random,
   terjawab: Array.from(result.jawaban, () => false),
   hadiah: winScore,
