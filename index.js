@@ -477,6 +477,7 @@ reply(`━━━[ _*GROUP MENU*_ ]━━━
 • ${prefix}tagall
 • ${prefix}delete
 • ${prefix}revoke
+• ${prefix}listonline
 • ${prefix}antilink
 • ${prefix}hidetag
 • ${prefix}demote
@@ -565,6 +566,14 @@ conn.sendMessage(from, { video: { url: fatih.video.nowm }, caption: 'done!! no w
 conn.sendMessage(from, { audio: { url: fatih.audio_only.original }, mimetype: 'audio/mpeg', fileName: `${fatih.title}.mp3` }, { quoted: msg })
 }
 break
+
+case 'listonline': case 'liston': {
+let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
+let online = [...Object.keys(store.presences[id]), botNumber]
+conn.sendText(from, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+}
+break
+		
 case 'ytmp4':
 case 'ini_videonya':
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
