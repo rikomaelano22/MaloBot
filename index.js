@@ -557,7 +557,7 @@ case 'tiktok':{
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
 if (!q) return reply(`contoh :\n${prefix+command} https://vt.tiktok.com/ZSdbFNn96/?k=1`)
 var url = q
-var fatihh = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${url}`)
+var fatihh = await fetchJson(`https://kanza-api.herokuapp.com//api/tiktok?url=${url}`)
 if (fatihh.msg) return reply('Link URL tidak valid')
 reply(mess.wait)
 var fatih = fatihh.result
@@ -569,7 +569,7 @@ case 'ytmp4':
 case 'ini_videonya':
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
 if (!q) return reply(`Kirim perintah ${prefix+command} https://youtu.be/PdJnRZRbveE`)
-var datah = await fetchJson(`https://hadi-api.herokuapp.com/api/yt2/video?url=${q}`)
+var datah = await fetchJson(`https://kanza-api.herokuapp.com//api/yt2/video?url=${q}`)
 var data = datah.result
 var txtt = `*YOUTUBE DOWNLOADER*\n\n*≻ Title :* ${data.title}\n*≻ Quality :* ${data.resolution}\n*≻ Size :* ${data.size}\n*≻ Type : ${data.ext}*\n*≻ Url Source :* ${q.split(" ")[0]}\n\n_Sedang Mengirim Media..._`
 var teks = `Done!`
@@ -580,7 +580,7 @@ case 'ytmp3':
 case 'ini_musiknya':
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
 if (!q) return reply(`Kirim perintah ${prefix+command} https://youtu.be/PdJnRZRbveE`)
-var datah = await fetchJson(`https://hadi-api.herokuapp.com/api/yt2/audio?url=${q}`)
+var datah = await fetchJson(`https://kanza-api.herokuapp.com//api/yt2/audio?url=${q}`)
 var data = datah.result
 var txtt = `*YOUTUBE DOWNLOADER*\n\n*≻ Title :* ${data.title}\n*≻ Quality :* ${data.resolution}\n*≻ Size :* ${data.size}\n*≻ Type :* ${data.ext}\n*≻ Url Source :* ${q.split(" ")[0]}\n\n_Sedang Mengirim Media..._`
 var teks = `Done!`
@@ -709,7 +709,7 @@ break
 case 'ssweb':
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
 if (!q) return reply(`Format Invalid Atau Url Yang Kamu Ketik Tidak Di Temukan !!\n\nContoh :\n${prefix+command} google.com`)
-var web = `https://hadi-api.herokuapp.com/api/ssweb?url=${q}&device=desktop&full=on`
+var web = `https://kanza-api.herokuapp.com//api/ssweb?url=${q}&device=desktop&full=on`
 conn.sendMessage(from, { image: { url: web }, caption: 'Done!!' }, { quoted:msg })
 break
 case 'toimg':
@@ -1306,7 +1306,7 @@ reply('Fitur akan segera rilis')
 break
 case 'tts':{
 if (!cekTeman("id", sender)) return reply(mess.OnlyVerify)
-var tts = await getBuffer(`https://hadi-api.herokuapp.com/api/tts?language=id&text=${q}`)
+var tts = await getBuffer(`https://kanza-api.herokuapp.com//api/tts?language=id&text=${q}`)
 if (!q) return reply(`Contoh :\n${prefix+command} hallo`)
 reply(mess.wait)
 conn.sendMessage(from, {audio: tts, mimetype:'audio/mpeg', ptt:true }, {quoted:msg})
